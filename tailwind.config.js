@@ -1,29 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
-
   theme: {
     extend: {
       fontFamily: {
         sans: ['Inter', 'sans-serif']
       },
       colors: {
-        danger: '#C9353F',
-        destructive: '#C9353F',
-        success: '#00A870',
-        warning: {
-          DEFAULT: '#FFB800',
-          50: '#FFFDF5',
-          100: '#FFF9E0',
-          200: '#FFF2B1',
-          300: '#FFE982',
-          400: '#FFD83D',
-          500: '#FFB800',
-          600: '#CC9400',
-          700: '#996F00',
-          800: '#664B00',
-          900: '#332600'
-        },
         neutral: {
           25: '#FAFAFA',
           50: '#F3F3F3',
@@ -33,32 +16,104 @@ export default {
           300: '#ABAEB5'
         },
         primary: {
-          DEFAULT: '#18978f',
-          50: '#f7fcfb',
-          100: '#e7f6f2',
-          200: '#c7ebe1',
-          300: '#82D3C1',
-          400: '#12a594',
-          500: '#18978f',
-          600: '#006b70',
-          700: '#003742',
-          foreground: 'hsl(var(--primary-foreground) / <alpha-value>)'
+          DEFAULT: 'var(--semi-color-primary)',
+          hover: 'var(--semi-color-primary-hover)',
+          active: 'var(--semi-color-primary-active)',
+          disabled: 'var(--semi-color-primary-disabled)',
+          light: 'var(--semi-color-primary-light-default)',
+          'light-hover': 'var(--semi-color-primary-light-hover)',
+          'light-active': 'var(--semi-color-primary-light-active)'
         },
-        muted: {
-          DEFAULT: 'hsl(var(--muted) / <alpha-value>)',
-          foreground: 'hsl(var(--muted-foreground) / <alpha-value>)'
+        secondary: {
+          DEFAULT: 'var(--semi-color-secondary)',
+          hover: 'var(--semi-color-secondary-hover)',
+          active: 'var(--semi-color-secondary-active)',
+          disabled: 'var(--semi-color-secondary-disabled)',
+          light: 'var(--semi-color-secondary-light-default)',
+          'light-hover': 'var(--semi-color-secondary-light-hover)',
+          'light-active': 'var(--semi-color-secondary-light-active)'
         },
-        popover: {
-          DEFAULT: 'hsl(var(--popover) / <alpha-value>)',
-          foreground: 'hsl(var(--popover-foreground) / <alpha-value>)'
+        tertiary: {
+          DEFAULT: 'var(--semi-color-tertiary)',
+          hover: 'var(--semi-color-tertiary-hover)',
+          active: 'var(--semi-color-tertiary-active)',
+          disabled: 'var(--semi-color-tertiary-disabled)',
+          light: 'var(--semi-color-tertiary-light-default)',
+          'light-hover': 'var(--semi-color-tertiary-light-hover)',
+          'light-active': 'var(--semi-color-tertiary-light-active)'
         },
-        accent: {
-          DEFAULT: 'hsl(var(--accent) / <alpha-value>)',
-          foreground: 'hsl(var(--accent-foreground) / <alpha-value>)'
+        info: {
+          DEFAULT: 'var(--semi-color-info)',
+          hover: 'var(--semi-color-info-hover)',
+          active: 'var(--semi-color-info-active)',
+          disabled: 'var(--semi-color-info-disabled)',
+          light: 'var(--semi-color-info-light-default)',
+          'light-hover': 'var(--semi-color-info-light-hover)',
+          'light-active': 'var(--semi-color-info-light-active)'
         },
-        background: {
-          DEFAULT: 'hsl(var(--background) / <alpha-value>)'
+        success: {
+          DEFAULT: 'var(--semi-color-success)',
+          hover: 'var(--semi-color-success-hover)',
+          active: 'var(--semi-color-success-active)',
+          disabled: 'var(--semi-color-success-disabled)',
+          light: 'var(--semi-color-success-light-default)',
+          'light-hover': 'var(--semi-color-success-light-hover)',
+          'light-active': 'var(--semi-color-success-light-active)'
+        },
+        warning: {
+          DEFAULT: 'var(--semi-color-warning)',
+          hover: 'var(--semi-color-warning-hover)',
+          active: 'var(--semi-color-warning-active)',
+          disabled: 'var(--semi-color-warning-disabled)',
+          light: 'var(--semi-color-warning-light-default)',
+          'light-hover': 'var(--semi-color-warning-light-hover)',
+          'light-active': 'var(--semi-color-warning-light-active)'
+        },
+        danger: {
+          DEFAULT: 'var(--semi-color-danger)',
+          hover: 'var(--semi-color-danger-hover)',
+          active: 'var(--semi-color-danger-active)',
+          disabled: 'var(--semi-color-danger-disabled)',
+          light: 'var(--semi-color-danger-light-default)',
+          'light-hover': 'var(--semi-color-danger-light-hover)',
+          'light-active': 'var(--semi-color-danger-light-active)'
+        },
+        text: {
+          0: 'var(--semi-color-text-0)',
+          1: 'var(--semi-color-text-1)',
+          2: 'var(--semi-color-text-2)',
+          3: 'var(--semi-color-text-3)'
+        },
+        link: {
+          DEFAULT: 'var(--semi-color-link)',
+          hover: 'var(--semi-color-link-hover)',
+          active: 'var(--semi-color-link-active)',
+          visited: 'var(--semi-color-link-visited)'
+        },
+        bg: {
+          0: 'var(--semi-color-bg-0)',
+          1: 'var(--semi-color-bg-1)',
+          2: 'var(--semi-color-bg-2)',
+          3: 'var(--semi-color-bg-3)',
+          4: 'var(--semi-color-bg-4)'
+        },
+        border: {
+          DEFAULT: 'var(--semi-color-border)'
+        },
+        disabled: {
+          text: 'var(--semi-color-disabled-text)',
+          bg: 'var(--semi-color-disabled-bg)',
+          border: 'var(--semi-color-disabled-border)'
+        },
+        shadow: {
+          DEFAULT: 'var(--semi-color-shadow)'
         }
+      },
+      boxShadow: {
+        DEFAULT: 'var(--semi-shadow-elevated)'
+      },
+      boxShadowColor: {
+        DEFAULT: 'var(--semi-color-border)'
       }
     }
   },

@@ -11,7 +11,7 @@ const logout = () => {
 
 const niceAxiosOptions: NiceAxiosOptions = {
   baseURL: REACT_APP_API_URL,
-  headerAuthFieldKey: 'PAI-USER-LOGIN-TOKEN',
+  headerAuthFieldKey: 'xxx',
   defaultMeta: {
     isOriginalResponse: false,
     isOnlyUnwrapResponseData: false,

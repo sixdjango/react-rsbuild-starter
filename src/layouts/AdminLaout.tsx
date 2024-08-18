@@ -1,6 +1,6 @@
-import { IconSemiLogo } from '@douyinfe/semi-icons'
+import { IconBell, IconHelpCircle, IconSemiLogo } from '@douyinfe/semi-icons'
 import { NavItemProps } from '@douyinfe/semi-ui/lib/es/navigation'
-import { Layout, Nav } from '@yc-tech/react-component'
+import { Avatar, Button, Layout, Nav } from '@yc-tech/react-component'
 import { useEffect, useState } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import { useRouteConfig } from '~/hooks/useRouteMeta'
@@ -12,24 +12,20 @@ export function AdminLayout() {
   const { route } = useRouteConfig()
 
   useEffect(() => {
-    if (route) setSelectedKeys([route.key as string])
+    if (route) setSelectedKeys([route.path as string])
   }, [route])
   return (
-    <Layout style={{ border: '1px solid var(--semi-color-border)' }} className="h-full">
+    <Layout className="h-full">
       <Sider style={{ backgroundColor: 'var(--semi-color-bg-1)' }}>
         <Nav
           selectedKeys={selectedKeys}
           style={{ maxWidth: 220, height: '100%' }}
           renderWrapper={({ itemElement, isSubNav, isInSubNav, props }) => {
-            return (
-              <Link style={{ textDecoration: 'none' }} to={(props as NavItemProps).link!}>
-                {itemElement}
-              </Link>
-            )
+            return <Link to={(props as NavItemProps).itemKey! as string}>{itemElement}</Link>
           }}
           items={getMenuList()}
           header={{
-            logo: <IconSemiLogo style={{ fontSize: 36 }} />,
+            logo: <IconSemiLogo style={{ fontSize: 36 }} className="text-primary" />,
             text: 'Semi Design'
           }}
           footer={{
@@ -38,33 +34,35 @@ export function AdminLayout() {
         />
       </Sider>
       <Layout>
-        {/* <Header style={{ backgroundColor: 'var(--semi-color-bg-1)' }}>
-          <Nav
-            mode="horizontal"
-            footer={
-              <>
-                <Button
-                  theme="borderless"
-                  icon={<IconBell size="large" />}
-                  style={{
-                    color: 'var(--semi-color-text-2)',
-                    marginRight: '12px'
-                  }}
-                />
-                <Button
-                  theme="borderless"
-                  icon={<IconHelpCircle size="large" />}
-                  style={{
-                    color: 'var(--semi-color-text-2)',
-                    marginRight: '12px'
-                  }}
-                />
-                <Avatar color="orange" size="small">
-                  YJ
-                </Avatar>
-              </>
-            }></Nav>
-        </Header> */}
+        {!route?.meta?.hideHeader && (
+          <Header style={{ backgroundColor: 'var(--semi-color-bg-1)' }}>
+            <Nav
+              mode="horizontal"
+              footer={
+                <>
+                  <Button
+                    theme="borderless"
+                    icon={<IconBell size="large" />}
+                    style={{
+                      color: 'var(--semi-color-text-2)',
+                      marginRight: '12px'
+                    }}
+                  />
+                  <Button
+                    theme="borderless"
+                    icon={<IconHelpCircle size="large" />}
+                    style={{
+                      color: 'var(--semi-color-text-2)',
+                      marginRight: '12px'
+                    }}
+                  />
+                  <Avatar color="orange" size="small">
+                    YJ
+                  </Avatar>
+                </>
+              }></Nav>
+          </Header>
+        )}
         <Content
           style={{
             backgroundColor: 'var(--semi-color-bg-0)'

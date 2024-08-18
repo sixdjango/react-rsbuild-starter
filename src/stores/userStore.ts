@@ -5,7 +5,6 @@ import { CacheEnum } from '~/constants/CacheEnum'
 export interface UserState {
   state: {
     token: string
-    pinvoIoToken: string
     userInfo?: {
       userId: string
     }
@@ -21,10 +20,9 @@ export interface UserState {
  */
 const useUserStore = create(
   persist(
-    combine({ token: '', pinvoIoToken: '', userInfo: { userId: '' } }, (set) => ({
+    combine({ token: '', userInfo: { userId: '' } }, (set) => ({
       setToken: (v: string) => set((state) => ({ token: v })),
-      setUserInfo: (v: any) => set((state) => ({ userInfo: v })),
-      setPinvoIoToken: (v: string) => set((state) => ({ pinvoIoToken: v }))
+      setUserInfo: (v: any) => set((state) => ({ userInfo: v }))
     })),
     { name: CacheEnum.USER_STORAGE, storage: createJSONStorage(() => localStorage) }
   )

@@ -13,6 +13,7 @@ interface RouteMeta {
   activeMenu?: string
   icon?: ReactNode
   ignoreMenu?: boolean
+  hideHeader?: boolean
 }
 export interface RouteConfig {
   path: string
@@ -53,10 +54,9 @@ const menuList = deepReduce<RouteConfig, NavItems>(
     if (route.meta?.ignoreMenu) return acc
 
     acc.push({
-      itemKey: route.key,
+      itemKey: route.path,
       text: route.meta.title,
-      icon: route.meta.icon,
-      link: route.path
+      icon: route.meta.icon
     })
     return acc
   },
