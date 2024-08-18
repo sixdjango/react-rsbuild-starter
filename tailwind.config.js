@@ -117,6 +117,11 @@ export default {
         },
         shadow: {
           DEFAULT: 'var(--semi-color-shadow)'
+        },
+        fill: {
+          0: 'var(--semi-color-fill-0)',
+          1: 'var(--semi-color-fill-1)',
+          2: 'var(--semi-color-fill-2)'
         }
       },
       boxShadow: {

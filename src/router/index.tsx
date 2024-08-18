@@ -3,8 +3,11 @@ import { NavItems } from '@douyinfe/semi-ui/lib/es/navigation'
 import { deepReduce } from '@yc-tech/shared'
 import { ReactNode } from 'react'
 import { Route } from 'react-router-dom'
+import { RoutePathEnum } from '~/constants/RoutePathEnum'
 import { AdminLayout } from '~/layouts/AdminLaout'
+import { DefaultLayout } from '~/layouts/DefaultLayout'
 import { HomePage } from '~/pages/home'
+import { LoginPage } from '~/pages/login'
 
 interface RouteMeta {
   title?: string
@@ -17,7 +20,7 @@ interface RouteMeta {
 }
 export interface RouteConfig {
   path: string
-  key: string
+  key?: string
   element: React.ReactNode
   children?: RouteConfig[]
   redirect?: string
@@ -42,6 +45,20 @@ const routeList: RouteConfig[] = [
           title: 'Home',
           icon: <IconHome size="large" />
         }
+      }
+    ]
+  },
+  {
+    path: '/',
+    element: <DefaultLayout />,
+    meta: {
+      ignoreMenu: true
+    },
+    children: [
+      {
+        path: RoutePathEnum.Login,
+        element: <LoginPage />,
+        meta: {}
       }
     ]
   }
