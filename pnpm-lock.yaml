@@ -21,8 +21,8 @@ importers:
         specifier: ^1.0.1
         version: 1.0.1
       '@yc-tech/react-component':
-        specifier: ^0.1.39
-        version: 0.1.39(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-hook-form@7.52.2(react@18.3.1))(typescript@5.5.4)
+        specifier: ^0.1.42
+        version: 0.1.42(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-hook-form@7.52.2(react@18.3.1))(typescript@5.5.4)
       '@yc-tech/shared':
         specifier: ^0.1.13
         version: 0.1.13
@@ -1133,8 +1133,8 @@ packages:
   '@yc-tech/prettier-config@0.1.0':
     resolution: {integrity: sha512-2XKagWSKnMxOJoE5WY36SXOhRlFH7UQ4BuXYUQFdiCSs8eyIVlNFF3Dv4hauK+zgMOtV48Zm/pQv9f40YLJC3g==}
 
-  '@yc-tech/react-component@0.1.39':
-    resolution: {integrity: sha512-+AwSHkKMiZDVNPVxh5x2GayaUuCJxCaARbo9f6QUCPhjefitgkyWArZaNXJrn9cNi7XB+0jG7u4zJK88hX/fBw==}
+  '@yc-tech/react-component@0.1.42':
+    resolution: {integrity: sha512-I15HhquJ1VCaK5wlyQb2FVpGreWduz3Q5bPzbVb5WdK0GG8yWUjWKpg+arX5xJ/8ei1DmLFEZAcDJ2L6VJ4VWA==}
     engines: {node: '18'}
 
   '@yc-tech/shared@0.1.13':
@@ -4371,7 +4371,7 @@ snapshots:
 
   '@yc-tech/prettier-config@0.1.0': {}
 
-  '@yc-tech/react-component@0.1.39(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-hook-form@7.52.2(react@18.3.1))(typescript@5.5.4)':
+  '@yc-tech/react-component@0.1.42(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-hook-form@7.52.2(react@18.3.1))(typescript@5.5.4)':
     dependencies:
       '@douyinfe/semi-ui': 2.64.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@floating-ui/react': 0.26.22(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
